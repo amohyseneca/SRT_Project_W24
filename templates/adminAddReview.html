@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SMR Admin</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1 class="subheader">Add New Review:</h1>
+        <div class="add_review">
+        <form method="post">
+            <label for="movie_name">Movie Name:</label><br>
+            <input type="text" id="movie_name" name="movie_name" required><br><br>
+            <label for="rating">Rating:</label><br>
+            <select id="rating" name="rating" required>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select><br><br>
+            <label for="author">Review Author:</label><br>
+            <input type="text" id="author" name="author" required><br><br>
+            <label for="genre">Genre:</label><br>
+            <select name="genre" id="genre" required>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Animation">Animation</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Crime">Crime</option>
+                <option value="Drama">Drama</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Horror">Horror</option>
+                <option value="Romance">Romance</option>
+            </select><br><br>
+            <label for="review">Written Review:</label><br>
+            <textarea name="review" id="review" required></textarea><br><br>
+            <label for="imdbid">IMDb ID:</label><br>
+            <input type="text" id="imdbid" name="imdbid" required><br><br>
+            <button type="submit" class="submit" value="Submit">Submit</button>
+        </form>
+        <br><a href="/admin/home">Return to Admin Home</a>
+    </div>
+    </body>
+</html>

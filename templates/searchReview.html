@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SMR Search</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="title"><h1>Seneca Movie Reviews</h1></div>
+        <div class="navlist">
+            <a href="/">Home</a>
+            <a href="/reviews">All Reviews</a>
+            <a href="/genres">Genres</a>
+            <a class="active" href="/search">Search</a>
+            <a href="/admin">Admin Login</a>
+        </div>
+        
+        <br>
+
+        <h1 class="subheader">Search by Movie Name:</h1>
+
+        <br>
+
+        <div class="movie_search">
+            <form method="post">
+                <input type="text" id="search_movie" name="search_movie" placeholder="Movie Name..." required><br>
+                <br><button type="submit" class="submit" value="search">Search</button>
+            </form>
+        </div>
+
+    </body>
+</html>

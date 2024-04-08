@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SMR Page Not Found</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="title"><h1>Seneca Movie Reviews</h1></div>
+        <div class="navlist">
+            <a href="/">Home</a>
+            <a href="/reviews">All Reviews</a>
+            <a href="/genres">Genres</a>
+            <a href="/search">Search</a>
+            <a href="/admin">Admin Login</a>
+        </div>
+        <div class = text>
+            <h1>There was no page found with your specified search.</h1>
+            <a href="/">Back to Home</a>
+        </div>
+    </body>
+</html>

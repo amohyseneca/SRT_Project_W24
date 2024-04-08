@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seneca Movie Review</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="title"><h1>Seneca Movie Reviews</h1></div>
+        <div class="navlist">
+            <a href="/">Home</a>
+            <a href="/reviews">All Reviews</a>
+            <a href="/genres">Genres</a>
+            <a href="/search">Search</a>
+            <a href="/admin">Admin Login</a>
+        </div>
+
+        <div class="review_header">
+            <img src="https://img.omdbapi.com/?i={{review[7]}}&apikey={{apikey}}" alt="Movie Picture">
+            <h1>{{review[1]}}</h1>
+            <p>Rating: {{review[2]}}/5</p>
+            <p>Author: {{review[3]}}</p>
+            <p>Date: {{review[5]}}</p>
+            <a href="https://www.imdb.com/title/{{review[7]}}">IMDb Link</a>
+        </div>
+
+        <hr class="rounded">
+
+        <div class="review_body">
+            <p>{{review[6]}}</p>
+        </div>
+
+        <hr class="rounded">
+
+        <div class="add_comment">
+            <h2>Comments ({{comments | length}}):</h2>
+            <p>Add your own comment:</p>
+            <form method="post">
+                <textarea name="review_comment" id="review_comment" required></textarea><br><br>
+                <button type="submit" class="submit" value="Submit">Submit Comment</button>
+            </form>
+        </div>
+
+        <div class="comments_container">
+            <div class="comments">
+                {% for comment in comments %}
+                <h2>Anonymous:</h2>
+                <p>{{comment[1]}}</p>
+                <br>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

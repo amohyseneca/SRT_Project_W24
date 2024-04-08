@@ -1,0 +1,380 @@
+body {
+    background-color: #f8f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/*
+All navlist styles
+*/
+
+.navlist {
+    background-color: #272726;
+    overflow: hidden;
+    width: 50%;
+    margin: auto;
+}
+
+.navlist a {
+    float: left;
+    color: #f8f9f9;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.navlist a.active {
+    background-color: #8f170f;
+    color: white;
+  }
+
+.navlist a:hover {
+    background-color: #db281c;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+Universal title h1 style
+*/
+
+.title h1 {
+    font-size: 64px;
+    color: #272726;
+    text-align: center;
+}
+
+/*
+Home Page subheader
+*/
+
+h1.subheader {
+    color: #272726;
+    text-align: center;
+}
+
+/*
+Home Page recent review items
+*/
+
+.recent_reviews {
+    margin: auto;
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.review {
+    padding: 30px;
+}
+
+.review img {
+    width: 150px;
+    height: auto;
+}
+
+.review a {
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 
+Review info before actual review
+*/
+
+
+.review_header {
+    margin: auto;
+    width: 10%;
+    padding: 30px;
+}
+
+.review_header h1 {
+    text-align: left;
+    font-size: 50px;
+    font-family: Arial, sans-serif;
+}
+
+/* 
+Review Text
+*/
+
+
+.review_body {
+    margin: auto;
+    width: 50%;
+    padding: 30px;
+}
+
+.review_body p {
+    text-align: left;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* 
+Adding Comment Section 
+*/
+
+.add_comment {
+    padding: 30px;
+    text-align: left;
+    width: 40%;
+    margin: auto;
+}
+
+.add_comment textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.add_comment button {
+    width: 50%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.add_comment button:hover {
+    background-color: #db281c;
+    cursor: pointer;
+}
+
+/* 
+Actual Comment Section
+*/
+
+.comments_container {
+    padding: 30px;
+    text-align: left;
+    width: 40%;
+    margin: auto;
+}
+
+.comments {
+    width: 100%;
+    padding: 10px;
+}
+
+/* 
+Divider 
+SRC=https://www.w3schools.com/howto/howto_css_dividers.asp 
+*/
+hr.rounded {
+    border-top: 8px solid #3b3b3b;
+    border-radius: 5px;
+    width: 20%;
+    margin:0 auto;
+}
+
+
+/*
+Admin Login section
+*/
+
+.adminLogin {
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.adminLogin label {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.adminLogin input {
+    width: 90%;
+    margin-bottom: 5px;
+    padding: 5%;
+    font-size: 15px;
+}
+
+.adminLogin button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.adminLogin button:hover {
+    background-color: #db281c;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+Search Page
+*/
+
+.movie_search {
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.movie_search input {
+    width: 90%;
+    margin-bottom: 5px;
+    padding: 5%;
+    font-size: 15px;
+}
+
+.movie_search button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.movie_search button:hover {
+    background-color: #db281c;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+Genre List
+*/
+
+.genre_list {
+    text-align: center;
+}
+
+.genre_list a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8f170f;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.genre_list a:hover {
+    background-color: #db281c;
+    cursor: pointer;
+}
+
+/*
+Admin Home
+*/
+
+.admin_home {
+    text-align: center;
+}
+
+.admin_home a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8f170f;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
+.admin_home a:hover {
+    background-color: #db281c;
+    cursor: pointer;
+}
+
+.a_admin_home {
+    text-align: center;
+}
+
+/*
+Admin Add Review
+*/
+
+.add_review {
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.add_review label {
+    font-size: 20px;
+}
+
+.add_review input {
+    width: 80%;
+    border: 1px solid #333;
+    margin-bottom: 5px;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 5px
+}
+
+.add_review textarea {
+    width: 80%;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.add_review select {
+    width: 85%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 5px
+}
+
+.add_review button{
+    width: 85%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.add_review button:hover {
+    background-color: #db281c;
+    color: white;
+    cursor: pointer;
+}
+
+/*
+List Reviews
+*/
+
+.list_reviews {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.list_reviews table {
+    border: 2px solid #8f170f;
+    border-radius: 4px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.list_reviews table th {
+    background-color: #8f170f;
+    color: white;
+    padding: 10px;
+}
+
+.list_reviews table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    color: #8f170f;
+    text-align: center;
+}

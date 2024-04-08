@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SMR Admin</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1 class="subheader">All Reviews</h1>
+        <div class="a_admin_home"><a href="/admin/home">Return to Admin Home Page</a></div><br>
+        <div class="list_reviews">
+            <table>
+                <tr>
+                    <th>Movie Name</th>
+                    <th>Date Published</th>
+                    <th>Link to Review</th>
+                    <th>Actions</th>  
+                </tr>
+                {% for review in reviews %}
+                <tr>
+                    <td>{{review[1]}}</td>
+                    <td>{{review[5]}}</td>
+                    <td><a href="/review/{{review[0]}}">Link</a></td>
+                    <td>
+                        <a href="/admin/updateReview/{{review[0]}}">Update</a>
+                        <a href="/admin/deleteReview/{{review[0]}}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
