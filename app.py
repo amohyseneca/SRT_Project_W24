@@ -11,7 +11,7 @@ omdbApiKey = 'f886e9c'
 conn = mysql.connector.connect(
     host = 'localhost', 
     user = 'root', 
-    password = 'Adakay2003!', 
+    password = '<DB PASSWORD>', 
     database = 'FlaskProject')
 
 @app.route('/')
