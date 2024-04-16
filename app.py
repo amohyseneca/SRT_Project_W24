@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 #You need an OMDb API Key for this. https://www.omdbapi.com/
-omdbApiKey = 'f886e9c'
+omdbApiKey = '<OMDB API KEY>'
 
 #MySQL Connection
 conn = mysql.connector.connect(
