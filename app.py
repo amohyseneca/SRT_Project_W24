@@ -77,7 +77,6 @@ def renderReview(id):
         conn.commit()
         current_url = request.url
         return redirect(current_url)
-    #If method is GET, render webpage.
     cursor.execute('SELECT * FROM reviews WHERE id=%s', (id, ))
     review = cursor.fetchone()
     #If review is not found, render page not found.
