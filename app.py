@@ -7,6 +7,7 @@ app = Flask(__name__)
 #You need an OMDb API Key for this. https://www.omdbapi.com/
 omdbApiKey = 'f886e9c'
 
+#MySQL Connection
 conn = mysql.connector.connect(
     host = 'localhost', 
     user = 'root', 
@@ -29,6 +30,7 @@ def genres():
 def searchGenre(genre):
     cursor = conn.cursor()
     searchQuery = f'%{genre}%'
+    #Search for reviews by genre
     cursor.execute('SELECT * FROM reviews WHERE genre LIKE %s', (searchQuery, ))
     reviews = cursor.fetchall()
     if not reviews:
@@ -38,6 +40,7 @@ def searchGenre(genre):
 @app.route('/reviews')
 def allReviews():
     cursor = conn.cursor()
+    #Fetching all reviews
     cursor.execute("SELECT * FROM reviews")
     reviews = cursor.fetchall()
     return render_template('allReviews.html', reviews = reviews, apikey = omdbApiKey)
@@ -45,6 +48,7 @@ def allReviews():
 @app.route('/search', methods=['GET','POST'])
 def searchMovie():
     if request.method == 'POST':
+        #Takes input from search field and passes it on
         query = request.form['search_movie']
         return redirect(url_for('movieResults', movie=query))
     return render_template('searchReview.html')
@@ -52,6 +56,7 @@ def searchMovie():
 @app.route('/search/<string:movie>', methods=['GET'])
 def movieResults(movie):
     cursor = conn.cursor()
+    #Searching for anything that has the thing searched for
     searchQuery = f'%{movie}%'
     cursor.execute('SELECT * FROM reviews WHERE name LIKE %s', (searchQuery, ))
     reviews = cursor.fetchall()
@@ -89,9 +94,11 @@ def adminLogin():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        #Checking to see if username and password are admin
         if username == 'admin' and password == 'admin':
             return redirect(url_for('adminHome', alert=None))
         else:
+            #If login is not correct, will return with an error
             return render_template('adminLogin.html', error='Error')
     return render_template('adminLogin.html', error=None)
 
