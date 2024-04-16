@@ -29,6 +29,7 @@ def genres():
 @app.route('/genres/<string:genre>')
 def searchGenre(genre):
     cursor = conn.cursor()
+    # https://www.w3schools.com/sql/sql_like.asp
     searchQuery = f'%{genre}%'
     #Search for reviews by genre
     cursor.execute('SELECT * FROM reviews WHERE genre LIKE %s', (searchQuery, ))
@@ -56,7 +57,7 @@ def searchMovie():
 @app.route('/search/<string:movie>', methods=['GET'])
 def movieResults(movie):
     cursor = conn.cursor()
-    #Searching for anything that has the thing searched for
+    # https://www.w3schools.com/sql/sql_like.asp
     searchQuery = f'%{movie}%'
     cursor.execute('SELECT * FROM reviews WHERE name LIKE %s', (searchQuery, ))
     reviews = cursor.fetchall()
