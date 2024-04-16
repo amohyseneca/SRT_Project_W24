@@ -119,6 +119,7 @@ def addReview():
         pubdate = date.strftime('%Y-%m-%d')
         imdbid = request.form['imdbid']
         cursor= conn.cursor()
+        #Add all form responses as review to DB
         cursor.execute('INSERT INTO reviews (name, rating, author, genre, pubdate, review, imdbid) values(%s, %s, %s, %s, %s, %s, %s)',(name, rating, author, genre, pubdate, review, imdbid))
         conn.commit()
         return redirect(url_for('adminHome', alert=True, alert_message="Successfully added new review!"))
@@ -136,9 +137,11 @@ def updateReview(id):
         date = datetime.today().date()
         pubdate = date.strftime('%Y-%m-%d')
         imdbid = request.form['imdbid']
+        #Updating DB with new information
         cursor.execute('UPDATE reviews SET name=%s, rating=%s, author=%s, genre=%s, pubdate=%s, review=%s, imdbid=%s WHERE id=%s', (name, rating, author, genre, pubdate, review, imdbid, id))
         conn.commit()
         return redirect(url_for('adminHome'))
+        
     cursor.execute('SELECT * FROM reviews WHERE id=%s', (id, ))
     review = cursor.fetchone()
     return render_template('adminUpdateReview.html', review=review)
